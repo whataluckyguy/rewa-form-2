@@ -14,6 +14,7 @@ import WellDev from "./Forms/WellDev";
 import Downhole from "./Forms/Downhole";
 import Pvt from "./Forms/Pvt";
 import Reservoir from "./Forms/Reservoir";
+import LiftMethod from "./Forms/LiftMethod";
 
 // stepper and tabs start
 const steps = [
@@ -211,7 +212,7 @@ function Workspace() {
           <Reservoir />
         </CustomTabPanel>
         <CustomTabPanel value={activeStep} index={5}>
-          Item Six
+          <LiftMethod />
         </CustomTabPanel>
       </Box>
     </Box>

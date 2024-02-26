@@ -1,0 +1,92 @@
+.liftMethod{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: gainsboro;
+    overflow-y: scroll;
+}
+
+.liftMethodLeft{
+    width: 68%;
+    height: 100%;
+    display: flex;
+}
+
+.leftone{
+    width: 50%;
+    height: 100%;
+    /* background-color: aqua; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+}
+
+.leftoneTop{
+    height: 86%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftoneTop>#head{
+    text-align: center;
+    background-color: gainsboro;
+}
+
+.inputItem{
+    width: 100%;
+    height: calc(100%/10);
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputItem>*{
+    width: calc(100%/3);
+    text-align: center;
+}
+
+.leftoneBottom{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.leftoneBottom>*{
+    width: calc(100%/3);
+    text-align: center;
+}
+
+.lefttwo{
+    width: 50%;
+}
+
+.lefttwo>#head{
+    text-align: center;
+    background-color: gainsboro;
+}
+
+.lefttwo>.inputItem{
+    display: flex;
+    justify-content: space-between;
+}
+
+.liftMethodRight{
+    width: 28%;
+    height: 100%;
+    /* background-color: bisque; */
+}
+
+.liftMethodRight>#head{
+    background-color: gainsboro;
+}
+
+
+
+.list-one>*{
+    margin-top: 1%;
+}
+
+.list-two{
+    display: flex;
+    flex-direction: column;
+}

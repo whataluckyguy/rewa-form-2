@@ -22,12 +22,16 @@ import { useState } from "react";
 // edits
 import {
   AddBox,
+  ChevronRight,
   Delete,
   ExitToApp,
+  ExpandMore,
   InsertDriveFile,
 } from "@mui/icons-material";
 import { TextField } from "@mui/material";
 import Workspace from "./Components/Workspace";
+import { TreeItem, TreeView } from "@mui/x-tree-view";
+import masterData from "./MasterTable.json";
 
 const drawerWidth = 240;
 
@@ -177,7 +181,7 @@ function App() {
           >
             <TextField
               id="outlined-basic"
-              label="Search"
+              label="Search box chart name"
               variant="outlined"
               size="small"
             />
@@ -216,7 +220,7 @@ function App() {
           ))}
         </List> */}
         <Divider />
-        <List>
+        {/* <List>
           {["All mail", "Trash", "Spam"].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
@@ -239,7 +243,21 @@ function App() {
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
+        </List> */}
+        {/* Tree view start */}
+        <TreeView
+          aria-label="input data navigator"
+          defaultCollapseIcon={<ExpandMore />}
+          defaultExpandIcon={<ChevronRight />}
+        >
+          <TreeItem nodeId="1" label="Region">
+            <TreeItem nodeId="2" label="RG1">
+              <TreeItem nodeId="3" label="F1"></TreeItem>
+              <TreeItem nodeId="4" label="F2"></TreeItem>
+            </TreeItem>
+          </TreeItem>
+        </TreeView>
+        {/* Tree view end */}
       </Drawer>
       {/* workspace start */}
       <Workspace />
