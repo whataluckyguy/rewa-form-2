@@ -18,7 +18,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // edits
 import {
   AddBox,
@@ -245,18 +245,76 @@ function App() {
           ))}
         </List> */}
         {/* Tree view start */}
-        <TreeView
-          aria-label="input data navigator"
-          defaultCollapseIcon={<ExpandMore />}
-          defaultExpandIcon={<ChevronRight />}
-        >
-          <TreeItem nodeId="1" label="Region">
-            <TreeItem nodeId="2" label="RG1">
-              <TreeItem nodeId="3" label="F1"></TreeItem>
-              <TreeItem nodeId="4" label="F2"></TreeItem>
+        {open ? (
+          <TreeView
+            aria-label="input data navigator"
+            defaultCollapseIcon={<ExpandMore />}
+            defaultExpandIcon={<ChevronRight />}
+          >
+            <TreeItem nodeId="1" label="Region">
+              <TreeItem nodeId="2" label="RG1">
+                <TreeItem nodeId="3" label="F1">
+                  <TreeItem nodeId="5" label="GL">
+                    {masterData.map((treeitem, index) => {
+                      if (treeitem.Field === "F1" && treeitem.PM === "GL") {
+                        return (
+                          <TreeItem
+                            key={index}
+                            nodeId={treeitem.EntId}
+                            label={treeitem.EntName}
+                          />
+                        );
+                      }
+                    })}
+                  </TreeItem>
+                  <TreeItem nodeId="6" label="NF">
+                    {masterData.map((treeitem, index) => {
+                      if (treeitem.Field === "F1" && treeitem.PM === "NF") {
+                        return (
+                          <TreeItem
+                            key={index}
+                            nodeId={treeitem.EntId}
+                            label={treeitem.EntName}
+                          />
+                        );
+                      }
+                    })}
+                  </TreeItem>
+                </TreeItem>
+                <TreeItem nodeId="4" label="F2">
+                  <TreeItem nodeId="7" label="GL">
+                    {masterData.map((treeitem, index) => {
+                      if (treeitem.Field === "F2" && treeitem.PM === "GL") {
+                        return (
+                          <TreeItem
+                            key={index}
+                            nodeId={treeitem.EntId}
+                            label={treeitem.EntName}
+                          />
+                        );
+                      }
+                    })}
+                  </TreeItem>
+                  <TreeItem nodeId="8" label="NF">
+                    {masterData.map((treeitem, index) => {
+                      if (treeitem.Field === "F2" && treeitem.PM === "NF") {
+                        return (
+                          <TreeItem
+                            key={index}
+                            nodeId={treeitem.EntId}
+                            label={treeitem.EntName}
+                          />
+                        );
+                      }
+                    })}
+                  </TreeItem>
+                </TreeItem>
+              </TreeItem>
             </TreeItem>
-          </TreeItem>
-        </TreeView>
+          </TreeView>
+        ) : (
+          <></>
+        )}
         {/* Tree view end */}
       </Drawer>
       {/* workspace start */}
